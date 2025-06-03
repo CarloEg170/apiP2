@@ -1,0 +1,41 @@
+<?php
+
+namespace App\Repositories;
+
+use App\Models\Usuario;
+
+class UsuarioRepository
+{
+    public function store(array $data){
+        return Usuario::create($data);
+    }
+
+        public function get(){
+        return Usuario::all();
+    }
+    public function details(int $id){
+        return Usuario::findOrFail($id);
+    }
+    public function update(int $id, array $data){
+        $usuario = $this->details($id);
+        $usuario->update($data);
+        return $usuario;
+    }
+
+    public function delete(int $id){
+        $usuario = $this->details($id);
+        $usuario->delete();
+        return $usuario;
+    }
+
+    public function getWithReviews(){
+        $usuario = Usuario::with('review')->get();
+        return $usuario;
+    }
+
+    public function findReviews(int $id){
+        $usuario = $this->details($id);
+        return $usuario->usuarios;
+    }
+}
+
