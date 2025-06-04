@@ -8,12 +8,25 @@ use App\Http\Controllers\AutorController;
 use App\Http\Controllers\LivroController;
 use App\Http\Controllers\GeneroController;
 use App\Http\Controllers\ReviewController;
+use Symfony\Component\Console\Application;
 use App\Http\Controllers\UsuarioController;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
 
+//return Application::configure(basePath: dirname(__DIR__))
+//    ->withRouting(
+//        web:__DIR__.'/../routes/web.php',
+//        api:__DIR__.'/../routes/console.php',
+//        gealth: '/up',
+//    )
+//    ->withMiddLeware(function (Middleware $middleware){
+//        $middleware->group('api', [
+//            ForceJsonResponse::class,
+//            Illuminate\Routing\Middleware\SubstituteBindings::class,
+ //       ]);
+//    })
+//    ->withExceptions(function (Exception $exceptions){
+        //
+//    })->creat();
 
 Route::controller(AutorController::class)->group(function(){
     Route::get('/autores', 'get');
