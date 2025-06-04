@@ -68,11 +68,11 @@ class UsuarioController extends Controller
 
     public function findReviews(int $id){
         try{
-            $review = $this->usuarioService->findReviews($id);
+            $reviews = $this->usuarioService->findReviews($id);
         }
         catch(ModelNotFoundException $e){
             return response()->json(['error'=>'usuarios not found', 404]);
         }
-        return UsuarioResource::collection($review);
+        return UsuarioResource::collection($reviews);
     }
 }

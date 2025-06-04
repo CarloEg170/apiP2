@@ -57,7 +57,7 @@ class AutorController extends Controller
         try{
             $autor = $this->autorService->delete($id);
         }catch(ModelNotFoundException $e){
-            return response()->json(['error'=>'Category not found', 404]);
+            return response()->json(['error'=>'autores not found', 404]);
         }
         return new AutorResource($autor);
     }
@@ -72,7 +72,7 @@ class AutorController extends Controller
             $livros = $this->autorService->findLivros($id);
         }
         catch(ModelNotFoundException $e){
-            return response()->json(['error'=>'Category not found', 404]);
+            return response()->json(['error'=>'autores not found', 404]);
         }
         return LivroResource::collection($livros);
     }

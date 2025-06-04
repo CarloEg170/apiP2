@@ -23,7 +23,7 @@ class AutorStoreRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'data_nacimento' => 'required|string|max:20',
+            'data_nacimento' => 'required|date|max:255',
             'biografia' => 'required|string|max:1024'
         ];
     }

@@ -23,7 +23,7 @@ class AutorUpdateRequest extends FormRequest
     {
         return [
             'name' => 'sometimes|required|string|max:255',
-            'data_nacimento' => 'sometimes|required|string|max:20',
+            'data_nacimento' => 'sometimes|required|date|max:255',
             'biografia' => 'sometimes|required|string|max:1024'
         ];
     }
