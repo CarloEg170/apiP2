@@ -7,7 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 
-class reviewSeeder extends Seeder
+class ReviewSeeder extends Seeder
 {
     /**
      * Run the database seeds.

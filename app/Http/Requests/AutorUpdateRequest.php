@@ -11,7 +11,7 @@ class AutorUpdateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,9 +22,9 @@ class AutorUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'sometimes|required|string|max:255',
-            'data_nacimento' => 'sometimes|required|date|max:255',
-            'biografia' => 'sometimes|required|string|max:1024'
+            'nome' => 'sometimes|required|string|max:85',
+            'data_nacimento' => 'sometimes|required|date',
+            'biografia' => 'sometimes|required|string|max:500'
         ];
     }
 }

@@ -11,7 +11,7 @@ class AutorStoreRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,9 +22,9 @@ class AutorStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:255',
-            'data_nacimento' => 'required|date|max:255',
-            'biografia' => 'required|string|max:1024'
+            'nome' => 'required|string|max:85',
+            'data_nacimento' => 'required|date',
+            'biografia' => 'required|string|max:500'
         ];
     }
 }

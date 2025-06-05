@@ -17,7 +17,7 @@ class GeneroSeeder extends Seeder
         $faker = Faker::create('pt_BR');
         foreach (range(1, 5) as $index) {
             Genero::create([
-            'nome' => $faker->name,
+            'nome' => $faker->nome,
             ]);
         }
     }

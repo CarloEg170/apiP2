@@ -11,7 +11,7 @@ class LivroStoreRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,7 +23,7 @@ class LivroStoreRequest extends FormRequest
     {
         return [
             'titulo' => 'required|string|max:255',
-            'sinopse' => 'required|string|max:1024'
+            'sinopse' => 'required|string|max:500'
         ];
     }
 }

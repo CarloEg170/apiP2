@@ -30,7 +30,7 @@ use App\Http\Controllers\UsuarioController;
 
 Route::controller(AutorController::class)->group(function(){
     Route::get('/autores', 'get');
-    Route::get('/autores/livro', 'getWithLivros');
+    Route::get('/autores/livros', 'getWithLivros');
     Route::get('/autores/{id}', 'details');
     Route::post('/autores', 'store');
     Route::patch('/autores/{id}', 'update');

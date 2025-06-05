@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('autor', function (Blueprint $table) {
             $table->id();
-            $table->string('nome', 85)->unique();
+            $table->string('nome', 85)->nullable();
             $table->date('data_nascimento')->nullable();
             $table->string('biografia', 500)->nullable();
             $table->timestamps();

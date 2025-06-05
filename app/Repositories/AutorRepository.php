@@ -7,7 +7,7 @@ use App\Models\Autor;
 class AutorRepository
 {
     public function store(array $data){
-        return Autor::create($data);
+        return Autor::store($data);
     }
     public function get(){
         return Autor::all();
@@ -28,8 +28,8 @@ class AutorRepository
     }
 
     public function getWithLivros(){
-        $autores = Autor::with('livros')->get();
-        return $autores;
+        $autor = Autor::with('livros')->get();
+        return $autor;
     }
 
     public function findLivros(int $id){

@@ -2,12 +2,13 @@
 
 namespace Database\Seeders;
 
+use App\Models\Autor;
 use App\Models\Usuario;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 
-class AutoresSeeder extends Seeder
+class AutorSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,10 +17,10 @@ class AutoresSeeder extends Seeder
     {
         $faker = Faker::create('pt_BR');
         foreach (range(1, 5) as $index) {
-            Usuario::create([
-            'nome' => $faker->name,
+            Autor::create([
+            'nome' => $faker->nome,
             'data_nascimento' => $faker->date('Y-m-d'),
-            'descricao' =>$faker->text(100),
+            'biografia' =>$faker->text(100),
             ]);
         }
     }
